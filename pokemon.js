@@ -5,8 +5,7 @@ class Pokemon {
 	}
 	
 	show(){
-		let info = this.name+": "+this.level;
-		console.log(info);
+		console.log(`${this.name}: ${this.level}`);
 	}
 	
 	valueOf() {
@@ -15,9 +14,6 @@ class Pokemon {
 }
 
 class PokemonList  extends Array{
-	constructor(...pokemons){
-		 super(...pokemons);
-	}
 	
 	add(name, level){
 		let pokemon = new Pokemon (name, level); 
@@ -29,7 +25,7 @@ class PokemonList  extends Array{
 			pokemon.show();
 		}
 		
-		console.log("Количество элементов: "+this.length);
+		console.log(`Количество элементов: ${this.length}`);
 	}
 	
 	max(){
@@ -78,7 +74,7 @@ found.add("Ратикэйт", 2);
 let index = 1;
 let pokemon = found[index];
 found.splice(index, 1);
-lost.add(pokemon.name, pokemon.level);
+lost.push(pokemon);
 
 console.log("lost:");
 lost.show();
